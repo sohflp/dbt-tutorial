@@ -1,0 +1,25 @@
+version: '3.1'
+
+services:
+  dbt-postgres:
+    image: ghcr.io/dbt-labs/dbt-postgres:1.2.latest
+    depends_on:
+      - postgres
+    volumes:
+      - ../profiles.yml:/root/.dbt/profiles.yml
+      - ../demo:/usr/app/dbt
+    environment:
+      DBT_USER: postgres
+      DBT_PASSWORD: password
+    entrypoint: /bin/bash
+
+  postgres:
+    image: postgres:14.1-alpine
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - ./volumes/postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
