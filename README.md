@@ -6,10 +6,16 @@ Two containers are configured via docker-compose in the folder `.docker`:
 1. postgres:14.1
 2. dbt-postgres:1.2
 
-To start a new DBT instance and interact via terminal, use the command below:
+To execute the DBT commands you can make use of the following shortcuts:
 
+**dbt seed**
 ```
-docker-compose run dbt-postgres
+make seed
 ```
 
-The Postgres database is initiated automatically from the command above.
+**dbt run**
+```
+make run
+```
+
+The Postgres database is initiated automatically from the commands above.

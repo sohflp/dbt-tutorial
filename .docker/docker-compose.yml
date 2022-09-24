@@ -11,7 +11,7 @@ services:
     environment:
       DBT_USER: postgres
       DBT_PASSWORD: password
-    entrypoint: /bin/bash
+    entrypoint: /bin/bash -c
 
   postgres:
     image: postgres:14.1-alpine
