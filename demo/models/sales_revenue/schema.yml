@@ -22,7 +22,7 @@ models:
   - name: staging_customers_name
     description: "Customers Full Name"
     columns:
-      - name: id
+      - name: customer_id
         description: "The primary key for this table"
         tests:
           - unique
@@ -32,8 +32,7 @@ models:
   - name: datamart_customer_orders
     description: "No. of Orders per Customer"
     columns:
-      - name: id
-        quote: true
+      - name: customer_id
         description: "The primary key for this table"
         tests:
           - unique
