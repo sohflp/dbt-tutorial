@@ -8,8 +8,8 @@ sources:
       - name: jaffle_shop_customers
 
 models:
-  - name: model_raw
-    description: "Orders Raw Data"
+  - name: staging_orders_completed
+    description: "Completed Orders"
     columns:
       - name: id
         description: "The primary key for this table"
@@ -18,13 +18,25 @@ models:
           - not_null
       - name: user_id
       - name: order_date
-      - name: status
 
-  - name: model_staging
-    description: "Orders Staging Data"
+  - name: staging_customers_name
+    description: "Customers Full Name"
     columns:
       - name: id
         description: "The primary key for this table"
         tests:
           - unique
           - not_null
+      - name: full_name
+
+  - name: datamart_customer_orders
+    description: "No. of Orders per Customer"
+    columns:
+      - name: id
+        quote: true
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: full_name
+      - name: total_orders

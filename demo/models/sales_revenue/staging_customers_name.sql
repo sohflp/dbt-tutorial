@@ -7,11 +7,11 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='table') }}
-
 with source_data as (
 
-    select * from {{ source('public', 'jaffle_shop_orders') }}
+    select "ID" as customer_id,
+           CONCAT("FIRST_NAME", "LAST_NAME") as full_name 
+      from {{ source('public', 'jaffle_shop_customers') }}
 
 )
 
