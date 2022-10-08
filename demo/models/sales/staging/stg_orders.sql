@@ -12,7 +12,7 @@ with source_data as (
     select "ID" as id,
            "USER_ID" as user_id,
            "STATUS" as status
-      from {{ source('public', 'jaffle_shop_orders') }}
+      from {{ source('raw', 'orders') }}
      where "STATUS" = 'completed'
 
 )

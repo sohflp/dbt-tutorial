@@ -11,7 +11,7 @@ with source_data as (
 
     select "ID" as customer_id,
            CONCAT("FIRST_NAME", "LAST_NAME") as full_name 
-      from {{ source('public', 'jaffle_shop_customers') }}
+      from {{ source('raw', 'customers') }}
 
 )
 
