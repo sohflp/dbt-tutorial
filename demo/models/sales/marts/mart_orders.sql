@@ -6,7 +6,7 @@
 select customer_id,
        full_name,
        count(*) as total_orders
-from {{ ref('staging_customers_name') }}
-left join {{ ref('staging_orders_completed') }}
-on {{ ref('staging_orders_completed') }}.user_id = {{ ref('staging_customers_name') }}.customer_id
+from {{ ref('stg_customers') }}
+left join {{ ref('stg_orders') }}
+on {{ ref('stg_orders') }}.user_id = {{ ref('stg_customers') }}.customer_id
 group by customer_id, full_name

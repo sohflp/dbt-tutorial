@@ -8,7 +8,7 @@ sources:
       - name: jaffle_shop_customers
 
 models:
-  - name: staging_orders_completed
+  - name: stg_orders
     description: "Completed Orders"
     columns:
       - name: id
@@ -19,7 +19,7 @@ models:
       - name: user_id
       - name: order_date
 
-  - name: staging_customers_name
+  - name: stg_customers
     description: "Customers Full Name"
     columns:
       - name: customer_id
@@ -29,7 +29,7 @@ models:
           - not_null
       - name: full_name
 
-  - name: datamart_customer_orders
+  - name: mart_orders
     description: "No. of Orders per Customer"
     columns:
       - name: customer_id
