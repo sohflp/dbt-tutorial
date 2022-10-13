@@ -10,6 +10,8 @@ sources:
         identifier: jaffle_shop_orders
       - name: customers
         identifier: jaffle_shop_customers
+      - name: payments
+        identifier: stripe_payments
 
 models:
   - name: stg_orders
